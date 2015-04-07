@@ -1,0 +1,50 @@
+
+
+
+<form name="ctsform" class="css-form" novalidate>
+
+
+ <div class="form-group">
+  <label>Name:</label>
+
+    <input type="text"  class="form-control" ng-model="customer.name" name="validName" required="" />
+    <br />
+    <div class="error-container" ng-show="ctsform.$submitted || ctsform.validName.$touched">
+      <div ng-show="ctsform.validName.$error.required">Name is a mandatory field</div>
+    </div>
+</div>
+
+
+    <div class="form-group">
+  <label>Company:</label>
+    <input type="text" class="form-control" ng-model="customer.company" name="validComp" required="" />
+    <br />
+    <div ng-show="ctsform.$submitted || ctsform.validComp.$touched">
+      <div ng-show="ctsform.validComp.$error.required"> <small class="error">Company is a mandatory field</small></div>
+    </div>
+</div>
+
+    <div class="form-group">
+  <label>Email:</label>
+    <input type="email" class="form-control" ng-model="customer.email" name="validEmail" required="" />
+    <br />
+    <div ng-show="ctsform.$submitted || ctsform.validEmail.$touched">
+      <div ng-show="ctsform.validEmail.$error.required">Email is a mandatory field</div>
+      <div class="error" 
+             ng-show="ctsform.validEmail.$invalid">
+              Invalid Email.
+      </div>
+    </div>
+</div>
+
+    <div class="form-group">
+  <label for="usr">Gender:</label>
+      
+     <div class="radio">  <label class="radio-inline"> <input type="radio"  ng-model="customer.gender" value="male" selected> male </label></div>
+ 	 <div class="radio">	<label class="radio-inline"> <input type="radio" ng-model="customer.gender" value="female"> female </label> </div> 
+  </div>
+ <div class="form-group">
+   <input class= "btn btn-primary" type="submit" ng-click="update()" value="Save" />
+   <input class= "btn btn-primary" type="button" ng-click="reset(ctsform)" value="Clear" />
+ </div>
+</form>

@@ -1,0 +1,53 @@
+
+         
+        <div>
+            <div style="text-align:right" ng-show="action.indexOf('search')>-1">
+                <input type="text"  ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
+            
+            </div>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                         <th ng-repeat="header in caption track by $index">
+                        <a style="cursor:pointer" ng-click="sort_by(field[$index])">  {{header}} </a></th>     
+                        
+                        <th  ng-show="action.indexOf('delete')>-1" ><a ng-click="">Action</a>
+                        </th>                   
+                   
+                </thead>
+                <tfoot ng-show="action.indexOf('pagination')>-1 && detailItems.length>itemsPerPage">
+                    <td colspan="6">
+                     <ul class="pagination pull-right">
+                                <li ng-class="{disabled: currentPage == 0}">
+                                    <a href ng-click="prevPage()">&laquo;</a>
+                                </li>
+                                <li ng-repeat="n in range(pagedItems.length)"
+                                    ng-class="{active: n == currentPage}"
+                                ng-click="setPage()">
+                                    <a href ng-bind="n + 1">1</a>
+                                </li>
+                                <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                    <a href ng-click="nextPage()">&raquo;</a>
+                                </li>
+                            </ul>
+                        
+                    </td>
+                </tfoot>
+                <tbody>
+                    <tr ng-repeat="item in pagedItems[currentPage]  | orderBy:sortingOrder:reverse" ng-click="editRecord(item.id)">
+                        <td ng-repeat="col in field"> 
+                              <span> {{item[col]}} </span> 
+                          </td>
+			
+			       <td ng-show="action.indexOf('delete')>-1"> 
+                     <a ng-click="deleterow(item.id)" id="close" href="#" ></a> </td>
+                   <!--  <input class="button btn-small" type="button" Value="Delete" ng-click="deleterow(item.id)"> -->
+			
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+         
+
+        </div>
+   
