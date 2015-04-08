@@ -10,21 +10,25 @@ describe('customer', function(){
 "gender":"female"
 };
 
-var count = Object.keys(cust).length
+var count = Object.keys(cust).length 
 
 it('Should have size 1', function(){
 	expect(count).toEqual(4);
+	console.log("test1 success");
 })
 it('Should have name as', function(){
 	expect(cust.name).toEqual('Name1');
+	console.log("test2 success");
 })
 
 it('Should have company as', function(){
 	expect(cust.company).toEqual('Company1');
+	console.log("test3 success");
 })
 
 it('Should have email as', function(){
-	expect(cust.email).toEqual('email1@cts.com');
+	expect(cust.email).toEqual('email1@cts.com'); 
+	console.log("test4 success");
 })
 
 

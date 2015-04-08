@@ -4,7 +4,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     serve = require('gulp-serve'),
-    jasmine = require('gulp-jasmine');
+    jasmine = require('gulp-jasmine'),
+    clean = require('gulp-clean');
+   
 
 var connect = require('gulp-connect');
  
@@ -22,6 +24,16 @@ gulp.task('connect', function () {
   });
 });
 
+
+
+gulp.task('style', function() {
+  return gulp.src('src/js/*.js')
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+
+
 gulp.task('js', function(){
 
 	 return gulp.src('src/js/*.js')
@@ -31,6 +43,15 @@ gulp.task('js', function(){
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
 })
+
+
+
+gulp.task('cleanDist', function(){
+
+ return gulp.src('dist', {read :false})
+ .pipe(clean());
+
+});
 
 gulp.task('jasmine', function () {
     return gulp.src('src/test/*.js')
