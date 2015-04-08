@@ -1,0 +1,5 @@
+FILE DELETED
+
+Microsoft Forefront Protection for Exchange Server removed a file since it was found to match a filter.
+File name: "winmail.dat->twoConfigs.tar->karma.conf.js"
+Filter name: "FILE FILTER= Prohibited Attachment List: *.js"
