@@ -3,19 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-   
-=======
->>>>>>> 09c16c50ba85484a69cbc8ab685ffbf489cae00a
     "gulp-connect": "^2.2.0"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.5.2",
     "gulp-jasmine": "^2.0.1",
     "gulp-jshint": "^1.10.0",
     "gulp-rename": "^1.2.2",
     "gulp-serve": "^0.3.1",
-    "gulp-uglify": "^1.1.0"
+    "gulp-uglify": "^1.1.0",
+    "jasmine-core": "^2.2.0",
+    "jshint-stylish": "^1.0.1",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-cli": "0.0.4",
+    "karma-commonjs": "0.0.13",
+    "karma-jasmine": "^0.3.5"
   }
 }
